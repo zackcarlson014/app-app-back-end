@@ -1,6 +1,6 @@
 class AppetizersController < ApplicationController
     def index
-        appetizers = Appetizer.all 
+        appetizers = Appetizer.all
         render json: appetizers, include: [:favorites]
     end
 
@@ -12,6 +12,6 @@ class AppetizersController < ApplicationController
     private
 
     def appetizer_params
-        params.require(:appetizer).permit(:title, :image_src, :rating)cd
+        params.require(:appetizer).permit(:title, :image_src, :rating)
     end
 end
