@@ -19,8 +19,8 @@ results.each do |app|
     data = []
     object = {
         "title": app["title"],
-        "image_src":  app["image"],
-        "rating":     0
+        "image_src": app["image"],
+        "rating": rand(25..200)
     }
     data << object
     Appetizer.create!(data)
