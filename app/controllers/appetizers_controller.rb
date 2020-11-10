@@ -6,8 +6,7 @@ class AppetizersController < ApplicationController
 
     def show 
         appetizer = Appetizer.find(params[:id])
-        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at]
-        
+        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at] 
     end
 
     def create
