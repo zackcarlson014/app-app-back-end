@@ -26,3 +26,16 @@ results.each do |app|
     Appetizer.create!(data)
 end
 
+User.create(name: "Test User", password: "password")
+
+Favorite.create(user_id: 1, appetizer_id: 14)
+Favorite.create(user_id: 1, appetizer_id: 23)
+Favorite.create(user_id: 1, appetizer_id: 5)
+Favorite.create(user_id: 1, appetizer_id: 88)
+Favorite.create(user_id: 1, appetizer_id: 54)
+Favorite.create(user_id: 1, appetizer_id: 25)
+Favorite.create(user_id: 1, appetizer_id: 99)
+Favorite.create(user_id: 1, appetizer_id: 77)
+Favorite.create(user_id: 1, appetizer_id: 45)
+Favorite.create(user_id: 1, appetizer_id: 47)
+Favorite.create(user_id: 1, appetizer_id: 13)
