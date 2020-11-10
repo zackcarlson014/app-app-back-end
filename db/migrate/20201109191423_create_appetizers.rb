@@ -2,9 +2,8 @@ class CreateAppetizers < ActiveRecord::Migration[6.0]
   def change
     create_table :appetizers do |t|
       t.string :title
-      t.integer :prep_time
-      t.integer :cook_time
-      t.integer :rating
+      t.string :image_src
+      t.integer :rating :default => 0
 
       t.timestamps
     end

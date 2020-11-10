@@ -4,6 +4,13 @@ class UsersController < ApplicationController
         user = User.create(user_params)
     end
 
+    def destroy
+        user = User.find(params[:id])
+        user.destroy
+
+        render json: user
+    end
+
     private
 
     def user_params
