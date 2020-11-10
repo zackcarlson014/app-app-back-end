@@ -1,6 +1,6 @@
 class AppetizersController < ApplicationController
     def index
-        appetizers = Appetizer.all 
+        appetizers = Appetizer.all
         render json: appetizers, include: [:favorites]
     end
 

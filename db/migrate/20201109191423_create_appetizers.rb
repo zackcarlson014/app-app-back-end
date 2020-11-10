@@ -3,8 +3,7 @@ class CreateAppetizers < ActiveRecord::Migration[6.0]
     create_table :appetizers do |t|
       t.string :title
       t.string :image_src
-      t.integer :rating :default => 0
-
+      t.integer :rating
       t.timestamps
     end
   end
