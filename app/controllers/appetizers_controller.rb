@@ -14,6 +14,17 @@ class AppetizersController < ApplicationController
         render json: appetizer
     end
 
+    def edit
+        appetizer = Appetizer.find(params[:id])
+        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at] 
+    end
+
+    def update
+        appetizer = Appetizer.find(params[:id])
+        appetizer.update!(appetizer_params)
+        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at] 
+    end
+
     private
 
     def appetizer_params
