@@ -4,25 +4,30 @@ class AppetizersController < ApplicationController
         render json: appetizers, include: [:favorites], except: [:created_at, :updated_at]
     end
 
-    def show 
+    def show
         appetizer = Appetizer.find(params[:id])
-        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at] 
+        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at]
     end
 
     def create
         appetizer = Appetizer.create(appetizer_params)
-        render json: appetizer
+
+        if appetizer.save
+            render json: appetizer
+        else
+            render json: { :errors => appetizer.errors.full_messages }
+        end
     end
 
     def edit
         appetizer = Appetizer.find(params[:id])
-        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at] 
+        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at]
     end
 
     def update
         appetizer = Appetizer.find(params[:id])
         appetizer.update!(appetizer_params)
-        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at] 
+        render json: appetizer, include: [:favorites], except: [:created_at, :updated_at]
     end
 
     def destroy
